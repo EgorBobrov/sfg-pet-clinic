@@ -1,11 +1,11 @@
 package guru.springframework.sfgpetclinic.service.map;
 
 import guru.springframework.sfgpetclinic.model.Pet;
-import guru.springframework.sfgpetclinic.service.CrudService;
+import guru.springframework.sfgpetclinic.service.PetService;
 
 import java.util.Collection;
 
-public class PetMapService extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetMapService extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Collection<Pet> findAll() {
         return super.findAll();
@@ -29,5 +29,10 @@ public class PetMapService extends AbstractMapService<Pet, Long> implements Crud
     @Override
     public Pet save(Pet object) {
         return super.save(object.getId(), object);
+    }
+
+    @Override
+    public Pet findByName(String name) {
+        return null;
     }
 }
